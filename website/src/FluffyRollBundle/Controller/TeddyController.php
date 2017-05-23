@@ -112,6 +112,8 @@ class TeddyController extends Controller
      */
     public function editAction(Request $request, Teddy $teddy)
     {
+        $fileNameOld = $teddy->getImage();
+
         $deleteForm = $this->createDeleteForm($teddy);
         $editForm = $this->createForm(TeddyType::class, $teddy);
         $editForm->handleRequest($request);
@@ -119,13 +121,17 @@ class TeddyController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             /** @var UploadedFile $file */
             $file = $teddy->getImage();
+            $fileName = $teddy->getName().'-'.md5(uniqid()).'.'.$file->guessExtension();
 
             $file->move(
-                $this->getParameter('brochures_directory'),
-                $teddy->getImage()
+                $this->getParameter('image_directory'),
+                $fileName
             );
+            $teddy->setImage($fileName);
 
             $this->getDoctrine()->getManager()->flush();
+
+            unlink($this->getParameter('image_directory').'/'.$fileNameOld);
 
             return $this->redirectToRoute('_edit', array('id' => $teddy->getId()));
         }

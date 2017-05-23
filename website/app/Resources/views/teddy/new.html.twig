@@ -1,10 +1,8 @@
 {% extends 'base.html.twig' %}
 
-{% block page_header %}
+{% block content %}
     <h1>Teddy creation</h1>
-{% endblock %}
 
-{% block page_content %}
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />

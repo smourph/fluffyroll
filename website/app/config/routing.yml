@@ -1,3 +1,5 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+fluffy_roll:
+    resource: "@FluffyRollBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

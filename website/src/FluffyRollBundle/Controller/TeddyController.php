@@ -3,6 +3,7 @@
 namespace FluffyRollBundle\Controller;
 
 use FluffyRollBundle\Entity\Teddy;
+use FluffyRollBundle\Form\TeddyType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -19,16 +20,33 @@ class TeddyController extends Controller
     /**
      * Lists all teddy entities.
      *
-     * @Route("/list", name="_index")
+     * @Route("/", name="_index")
      * @Method("GET")
      */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $teddies = $em->getRepository('FluffyRollBundle:Teddy')->findAll();
+        $teddies = $em->getRepository(Teddy::class)->findAll();
 
         return $this->render('teddy/index.html.twig', array(
+            'teddies' => $teddies,
+        ));
+    }
+
+    /**
+     * Lists all teddy entities.
+     *
+     * @Route("/list", name="_list")
+     * @Method("GET")
+     */
+    public function listAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $teddies = $em->getRepository(Teddy::class)->findAll();
+
+        return $this->render('teddy/list.html.twig', array(
             'teddies' => $teddies,
         ));
     }
@@ -42,7 +60,7 @@ class TeddyController extends Controller
     public function newAction(Request $request)
     {
         $teddy = new Teddy();
-        $form = $this->createForm('FluffyRollBundle\Form\TeddyType', $teddy);
+        $form = $this->createForm(TeddyType::class, $teddy);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -95,7 +113,7 @@ class TeddyController extends Controller
     public function editAction(Request $request, Teddy $teddy)
     {
         $deleteForm = $this->createDeleteForm($teddy);
-        $editForm = $this->createForm('FluffyRollBundle\Form\TeddyType', $teddy);
+        $editForm = $this->createForm(TeddyType::class, $teddy);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

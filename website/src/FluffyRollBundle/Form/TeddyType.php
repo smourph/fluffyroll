@@ -17,17 +17,28 @@ class TeddyType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('image', FileType::class);
+            ->add(
+                'image',
+                FileType::class,
+                [
+                    'attr' => [
+                        'accept' => 'image/*',
+                        'capture' => 'camera',
+                    ],
+                ]
+            );
     }
-    
+
     /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(array(
-            'data_class' => Teddy::class
-        ));
+        $resolver->setDefaults(
+            [
+                'data_class' => Teddy::class,
+            ]
+        );
     }
 
     /**

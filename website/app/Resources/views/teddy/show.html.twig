@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Teddy</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ teddy.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ teddy.name }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td><img src="{{ asset('upload/images/'~teddy.image|e) }}"/></td>
+            </tr>
+            <tr>
+                <th>Filename</th>
+                <td>{{ teddy.image }}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{% if teddy.updated %}{{ teddy.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('_edit', { 'id': teddy.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

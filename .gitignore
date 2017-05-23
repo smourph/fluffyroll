@@ -188,3 +188,5 @@ puphpet/config-custom.yaml
 
 # Custom #
 .idea/
+website/web/upload/images
+!website/web/upload/images/.gitkeep

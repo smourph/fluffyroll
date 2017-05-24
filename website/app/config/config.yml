@@ -69,3 +69,16 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+# Liip Imagine
+liip_imagine:
+    # configure resolvers
+    resolvers:
+        # setup the default resolver
+        default:
+            # use the default web path
+            web_path: ~
+    # your filter sets are defined here
+    filter_sets:
+        # use the default cache configuration
+        cache: ~

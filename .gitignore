@@ -192,3 +192,5 @@ website/web/upload/images
 !website/web/upload/images/.gitkeep
 website/web/media/cache
 !website/web/media/cache/.gitkeep
+website/web/js
+website/web/css

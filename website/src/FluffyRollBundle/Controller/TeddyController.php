@@ -29,9 +29,12 @@ class TeddyController extends Controller
 
         $teddies = $em->getRepository(Teddy::class)->findAll();
 
-        return $this->render('teddy/index.html.twig', array(
-            'teddies' => $teddies,
-        ));
+        return $this->render(
+            'teddy/index.html.twig',
+            [
+                'teddies' => $teddies,
+            ]
+        );
     }
 
     /**
@@ -46,9 +49,12 @@ class TeddyController extends Controller
 
         $teddies = $em->getRepository(Teddy::class)->findAll();
 
-        return $this->render('teddy/list.html.twig', array(
-            'teddies' => $teddies,
-        ));
+        return $this->render(
+            'teddy/list.html.twig',
+            [
+                'teddies' => $teddies,
+            ]
+        );
     }
 
     /**
@@ -79,13 +85,16 @@ class TeddyController extends Controller
             $em->persist($teddy);
             $em->flush();
 
-            return $this->redirectToRoute('_show', array('id' => $teddy->getId()));
+            return $this->redirectToRoute('_show', ['id' => $teddy->getId()]);
         }
 
-        return $this->render('teddy/new.html.twig', array(
-            'teddy' => $teddy,
-            'form' => $form->createView(),
-        ));
+        return $this->render(
+            'teddy/new.html.twig',
+            [
+                'teddy' => $teddy,
+                'form' => $form->createView(),
+            ]
+        );
     }
 
     /**
@@ -98,10 +107,13 @@ class TeddyController extends Controller
     {
         $deleteForm = $this->createDeleteForm($teddy);
 
-        return $this->render('teddy/show.html.twig', array(
-            'teddy' => $teddy,
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->render(
+            'teddy/show.html.twig',
+            [
+                'teddy' => $teddy,
+                'delete_form' => $deleteForm->createView(),
+            ]
+        );
     }
 
     /**
@@ -133,14 +145,17 @@ class TeddyController extends Controller
 
             unlink($this->getParameter('image_directory').'/'.$fileNameOld);
 
-            return $this->redirectToRoute('_edit', array('id' => $teddy->getId()));
+            return $this->redirectToRoute('_edit', ['id' => $teddy->getId()]);
         }
 
-        return $this->render('teddy/edit.html.twig', array(
-            'teddy' => $teddy,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
-        ));
+        return $this->render(
+            'teddy/edit.html.twig',
+            [
+                'teddy' => $teddy,
+                'edit_form' => $editForm->createView(),
+                'delete_form' => $deleteForm->createView(),
+            ]
+        );
     }
 
     /**
@@ -173,9 +188,8 @@ class TeddyController extends Controller
     private function createDeleteForm(Teddy $teddy)
     {
         return $this->createFormBuilder()
-            ->setAction($this->generateUrl('_delete', array('id' => $teddy->getId())))
+            ->setAction($this->generateUrl('_delete', ['id' => $teddy->getId()]))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 }

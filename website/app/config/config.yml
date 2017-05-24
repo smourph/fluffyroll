@@ -88,3 +88,19 @@ liip_imagine:
     filter_sets:
         # use the default cache configuration
         cache: ~
+        teddy_thumb:
+            quality: 75
+            filters:
+                auto_rotate: ~
+                thumbnail:
+                    size: [120, 160]
+                    mode: inset
+                    allow_upscale: true
+        teddy_roll:
+            quality: 90
+            filters:
+                auto_rotate: ~
+                thumbnail:
+                    size: [360, 480]
+                    mode: inset
+                    allow_upscale: true

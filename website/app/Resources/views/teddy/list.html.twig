@@ -19,7 +19,7 @@
             <tr>
                 <td><a href="{{ path('_show', { 'id': teddy.id }) }}">{{ teddy.id }}</a></td>
                 <td>{{ teddy.name }}</td>
-                <td><img src="{{ asset('upload/images/'~teddy.image|e) }}"/></td>
+                <td><img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"/></td>
                 <td>{{ teddy.image }}</td>
                 <td>{% if teddy.updated %}{{ teddy.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>

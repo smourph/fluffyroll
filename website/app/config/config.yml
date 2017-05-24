@@ -75,6 +75,10 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+    assets:
+        roulette:
+            inputs:
+                - '@FluffyRollBundle/Resources/public/js/roulette/roulette.min.js'
 
 # Liip Imagine
 liip_imagine:

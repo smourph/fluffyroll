@@ -30,7 +30,7 @@ class TeddyController extends Controller
         $teddies = $em->getRepository(Teddy::class)->findAll();
 
         return $this->render(
-            'teddy/index.html.twig',
+            'teddy/list.html.twig',
             [
                 'teddies' => $teddies,
             ]

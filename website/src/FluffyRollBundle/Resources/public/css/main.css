@@ -1,0 +1,86 @@
+body, .container-fluid {
+    height: 100%;
+}
+
+.container-fluid {
+    padding-top: 50px;
+}
+
+/* Navbar fixes */
+.navbar-nav {
+    margin: 5px 0;
+}
+
+.navbar-nav > li, .navbar-nav {
+    float: left !important;
+}
+
+.navbar-right {
+    float: right !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-header {
+        float: none !important;
+    }
+
+    .navbar-nav {
+        margin: 0;
+    }
+}
+/* Navbar fixes */
+
+.btn_container {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.btn_container .btn {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border: black 2px solid;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.btn_container .btn:first-child {
+    margin-top: 0;
+}
+
+.roulette_container {
+    padding-top: 15px;
+}
+
+.roulette_container .roulette {
+    display: none;
+    border-radius: 6px;
+}
+
+.roulette_container img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+}
+
+.teddy_info_container {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 15px;
+    right: 15px;
+    z-index: 1030;
+    text-align: center;
+}
+
+.teddy_info_container .name {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #151515;
+    background: rgb(255, 255, 255);
+    background: rgba(255, 255, 255, 0.75);
+    border: black 2px solid;
+    border-radius: 6px;
+    font-size: 1.5em;
+}

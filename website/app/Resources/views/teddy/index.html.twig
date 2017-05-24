@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row btn_container">
+        <div class="col-xs-12">
+            <button class="btn btn-lg btn-default start">FLUFFY ROLL</button>
+            <a class="btn btn-lg btn-default" href="{{ path('_new') }}">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> FLUFFY
+            </a>
+            <a class="btn btn-lg btn-default" href="{{ path('_list') }}">
+                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> FLUFFIES
+            </a>
+        </div>
+    </div>
+
+    <div class="row roulette_container">
+        <div class="col-xs-12">
+            <div class="roulette">
+                {% for teddy in teddies %}
+                    <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_roll') }}"
+                         data-name="{{ teddy.name|e }}"/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row teddy_info_container">
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="name"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% javascripts
+    '@roulette'
+    '@FluffyRollBundle/Resources/public/js/*'
+    output='js/main.js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

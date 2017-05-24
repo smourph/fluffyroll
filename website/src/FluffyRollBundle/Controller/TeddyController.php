@@ -70,14 +70,12 @@ class TeddyController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $fileUploader = $this->get('fluffy_roll.uploader.image');
+
             /** @var UploadedFile $file */
             $file = $teddy->getImage();
-            $fileName = $teddy->getName().'-'.md5(uniqid()).'.'.$file->guessExtension();
-
-            $file->move(
-                $this->getParameter('image_directory'),
-                $fileName
-            );
+            $prefix = $teddy->getName();
+            $fileName = $fileUploader->upload($file, $prefix);
 
             $teddy->setImage($fileName);
 
@@ -124,26 +122,25 @@ class TeddyController extends Controller
      */
     public function editAction(Request $request, Teddy $teddy)
     {
-        $fileNameOld = $teddy->getImage();
+        $previousFilename = $teddy->getImage();
 
         $deleteForm = $this->createDeleteForm($teddy);
         $editForm = $this->createForm(TeddyType::class, $teddy);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $fileUploader = $this->get('fluffy_roll.uploader.image');
+
             /** @var UploadedFile $file */
             $file = $teddy->getImage();
-            $fileName = $teddy->getName().'-'.md5(uniqid()).'.'.$file->guessExtension();
+            $prefix = $teddy->getName();
+            $fileName = $fileUploader->upload($file, $prefix);
 
-            $file->move(
-                $this->getParameter('image_directory'),
-                $fileName
-            );
             $teddy->setImage($fileName);
 
             $this->getDoctrine()->getManager()->flush();
 
-            unlink($this->getParameter('image_directory').'/'.$fileNameOld);
+            $fileUploader->removeFile($previousFilename);
 
             return $this->redirectToRoute('_edit', ['id' => $teddy->getId()]);
         }

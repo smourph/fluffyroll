@@ -163,13 +163,19 @@ class TeddyController extends Controller
      */
     public function deleteAction(Request $request, Teddy $teddy)
     {
+        $previousFilename = $teddy->getImage();
+
         $form = $this->createDeleteForm($teddy);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $fileUploader = $this->get('fluffy_roll.uploader.image');
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($teddy);
             $em->flush();
+
+            $fileUploader->removeFile($previousFilename);
         }
 
         return $this->redirectToRoute('_index');

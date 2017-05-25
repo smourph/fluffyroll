@@ -2,6 +2,8 @@
 
 namespace FluffyRollBundle\Repository;
 
+use FluffyRollBundle\Entity\Teddy;
+
 /**
  * TeddyRepository
  *
@@ -10,8 +12,22 @@ namespace FluffyRollBundle\Repository;
  */
 class TeddyRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * @return array
+     */
     public function findAllOrderedByName()
     {
         return $this->findBy([], ['name' => 'ASC']);
+    }
+
+    /**
+     * @return array
+     */
+    public function findAllRandomly()
+    {
+        return $this->createQueryBuilder('t')
+            ->orderBy('RAND()')
+            ->getQuery()
+            ->getResult();
     }
 }

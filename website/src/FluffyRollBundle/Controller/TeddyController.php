@@ -27,7 +27,7 @@ class TeddyController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $teddies = $em->getRepository(Teddy::class)->findAll();
+        $teddies = $em->getRepository(Teddy::class)->findAllRandomly();
 
         return $this->render(
             'teddy/index.html.twig',

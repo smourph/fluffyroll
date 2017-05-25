@@ -70,15 +70,6 @@ class TeddyController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $fileUploader = $this->get('fluffy_roll.uploader.image');
-
-            /** @var UploadedFile $file */
-            $file = $teddy->getImage();
-            $prefix = $teddy->getName();
-            $fileName = $fileUploader->upload($file, $prefix);
-
-            $teddy->setImage($fileName);
-
             $em = $this->getDoctrine()->getManager();
             $em->persist($teddy);
             $em->flush();
@@ -122,25 +113,12 @@ class TeddyController extends Controller
      */
     public function editAction(Request $request, Teddy $teddy)
     {
-        $previousFilename = $teddy->getImage();
-
         $deleteForm = $this->createDeleteForm($teddy);
         $editForm = $this->createForm(TeddyType::class, $teddy);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $fileUploader = $this->get('fluffy_roll.uploader.image');
-
-            /** @var UploadedFile $file */
-            $file = $teddy->getImage();
-            $prefix = $teddy->getName();
-            $fileName = $fileUploader->upload($file, $prefix);
-
-            $teddy->setImage($fileName);
-
             $this->getDoctrine()->getManager()->flush();
-
-            $fileUploader->removeFile($previousFilename);
 
             return $this->redirectToRoute('_show', ['id' => $teddy->getId()]);
         }
@@ -163,19 +141,13 @@ class TeddyController extends Controller
      */
     public function deleteAction(Request $request, Teddy $teddy)
     {
-        $previousFilename = $teddy->getImage();
-
         $form = $this->createDeleteForm($teddy);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $fileUploader = $this->get('fluffy_roll.uploader.image');
-
             $em = $this->getDoctrine()->getManager();
             $em->remove($teddy);
             $em->flush();
-
-            $fileUploader->removeFile($previousFilename);
         }
 
         return $this->redirectToRoute('_list');

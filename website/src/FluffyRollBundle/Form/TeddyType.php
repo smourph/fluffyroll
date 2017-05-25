@@ -27,10 +27,9 @@ class TeddyType extends AbstractType
                 ]
             )
             ->add(
-                'image',
+                'imageFile',
                 FileType::class,
                 [
-                    'data_class' => null,
                     'attr' => [
                         'accept' => 'image/*',
                         'capture' => 'camera',

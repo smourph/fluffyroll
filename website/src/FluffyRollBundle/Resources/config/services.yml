@@ -2,3 +2,5 @@ services:
     fluffy_roll.uploader.image:
         class: FluffyRollBundle\DependencyInjection\Utils\FileUploader
         arguments: ["%image_directory%"]
+    fluffy_roll.namer.propertyanduniqid:
+        class: FluffyRollBundle\DependencyInjection\Namer\PropertyAndUniqIdNamer

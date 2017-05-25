@@ -6,7 +6,7 @@
             {% for teddy in teddies %}
                 <div class="col-xs-4 col-md-2">
                     <a href="{{ path('_show', { 'id': teddy.id }) }}" class="thumbnail">
-                        <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"
+                        <img src="{{ vich_uploader_asset(teddy, 'imageFile') | imagine_filter('teddy_thumb') }}"
                              class="img-rounded"/>
                         <div class="caption">
                             <span class="name">{{ teddy.name|e }}</span>

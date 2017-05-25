@@ -3,7 +3,10 @@
 namespace FluffyRollBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * Teddy
@@ -11,6 +14,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="teddy")
  * @ORM\Entity(repositoryClass="FluffyRollBundle\Repository\TeddyRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @Vich\Uploadable()
  */
 class Teddy
 {
@@ -31,12 +35,19 @@ class Teddy
     private $name;
 
     /**
-     * @var string
+     * @var File
      *
-     * @ORM\Column(name="image", type="string")
+     * @Vich\UploadableField(mapping="teddy_image", fileNameProperty="image")
      *
      * @Assert\NotBlank(message="Picture is missing!")
      * @Assert\Image()
+     */
+    private $imageFile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string")
      */
     private $image;
 
@@ -80,6 +91,30 @@ class Teddy
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * @param File|UploadedFile $image
+     *
+     * @return Teddy
+     */
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        if ($image) {
+            $this->updated = new \DateTime();
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 
     /**

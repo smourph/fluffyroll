@@ -14,7 +14,7 @@
                 <tr>
                     <th>Image</th>
                     <td>
-                        <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"
+                        <img src="{{ vich_uploader_asset(teddy, 'imageFile') | imagine_filter('teddy_thumb') }}"
                              class="img-rounded"/>
                     </td>
                 </tr>

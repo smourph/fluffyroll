@@ -21,7 +21,8 @@
             {{ form_end(edit_form) }}
 
             <div class="image">
-                <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"/>
+                <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"
+                     class="img-rounded"/>
             </div>
         </div>
 

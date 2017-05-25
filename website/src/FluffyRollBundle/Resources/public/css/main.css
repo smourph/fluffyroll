@@ -64,7 +64,7 @@ h1 {
 
 .roulette_container img {
     height: 100%;
-    width: auto;
+    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -101,10 +101,6 @@ h1 {
 /* Page edit */
 .edit_container .image {
     text-align: center;
-}
-
-.edit_container .image img {
-    border-radius: 6px;
 }
 
 .edit_container .btn-second {

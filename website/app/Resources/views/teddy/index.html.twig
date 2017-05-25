@@ -18,7 +18,8 @@
             <div class="roulette">
                 {% for teddy in teddies %}
                     <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_roll') }}"
-                         data-name="{{ teddy.name|e }}"/>
+                         data-name="{{ teddy.name|e }}"
+                         class="img-rounded"/>
                 {% endfor %}
             </div>
         </div>

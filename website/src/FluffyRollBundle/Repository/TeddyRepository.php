@@ -10,4 +10,8 @@ namespace FluffyRollBundle\Repository;
  */
 class TeddyRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findAllOrderedByName()
+    {
+        return $this->findBy([], ['name' => 'ASC']);
+    }
 }

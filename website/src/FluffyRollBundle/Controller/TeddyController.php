@@ -47,7 +47,7 @@ class TeddyController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $teddies = $em->getRepository(Teddy::class)->findAll();
+        $teddies = $em->getRepository(Teddy::class)->findAllOrderedByName();
 
         return $this->render(
             'teddy/list.html.twig',

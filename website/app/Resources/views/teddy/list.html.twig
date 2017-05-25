@@ -1,45 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Teddies list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Filename</th>
-                <th>Updated</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row main_container list_container">
         {% for teddy in teddies %}
-            <tr>
-                <td><a href="{{ path('_show', { 'id': teddy.id }) }}">{{ teddy.id }}</a></td>
-                <td>{{ teddy.name }}</td>
-                <td><img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"/></td>
-                <td>{{ teddy.image }}</td>
-                <td>{% if teddy.updated %}{{ teddy.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('_show', { 'id': teddy.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('_edit', { 'id': teddy.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+            <div class="col-xs-4 col-md-3">
+                <a href="{{ path('_show', { 'id': teddy.id }) }}" class="thumbnail">
+                    <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"/>
+                    <div class="caption">
+                        <span class="name">{{ teddy.name|e }}</span>
+                    </div>
+                </a>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('_new') }}">Create a new teddy</a>
-        </li>
-    </ul>
+    </div>
 {% endblock %}

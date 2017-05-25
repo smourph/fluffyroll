@@ -2,10 +2,6 @@ body, .container-fluid {
     height: 100%;
 }
 
-.container-fluid {
-    padding-top: 50px;
-}
-
 /* Navbar fixes */
 .navbar-nav {
     margin: 5px 0;
@@ -28,10 +24,18 @@ body, .container-fluid {
         margin: 0;
     }
 }
+
+.container-fluid {
+    padding-top: 50px;
+}
 /* Navbar fixes */
 
-.btn_container {
+.main_container {
     padding-top: 15px;
+}
+
+/* Homepage */
+.btn_container {
     text-align: center;
 }
 
@@ -47,10 +51,6 @@ body, .container-fluid {
 
 .btn_container .btn:first-child {
     margin-top: 0;
-}
-
-.roulette_container {
-    padding-top: 15px;
 }
 
 .roulette_container .roulette {
@@ -83,4 +83,13 @@ body, .container-fluid {
     border: black 2px solid;
     border-radius: 6px;
     font-size: 1.5em;
+}
+
+/* Page list */
+.list_container {
+    text-align: center;
+}
+
+.list_container .thumbnail .caption {
+    padding: 4px 6px;
 }

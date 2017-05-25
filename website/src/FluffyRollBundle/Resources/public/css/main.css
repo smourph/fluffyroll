@@ -39,12 +39,12 @@ h1 {
 }
 
 /* Homepage */
-.btn_container {
+.container-buttons {
     text-align: center;
 }
 
-.btn_container .btn,
-.list_container .btn {
+.container-buttons .btn,
+.container-list .btn {
     width: 100%;
     margin-top: 40px;
     padding-top: 30px;
@@ -54,22 +54,22 @@ h1 {
     font-weight: bold;
 }
 
-.btn_container .btn:first-child {
+.container-buttons .btn:first-child {
     margin-top: 0;
 }
 
-.roulette_container .roulette {
+.container-roulette .roulette {
     display: none;
     border-radius: 6px;
 }
 
-.roulette_container img {
+.container-roulette img {
     height: 100%;
     max-width: 100%;
     margin: 0 auto;
 }
 
-.teddy_info_container {
+.container-teddy-name {
     display: none;
     position: fixed;
     bottom: 30px;
@@ -79,7 +79,7 @@ h1 {
     text-align: center;
 }
 
-.teddy_info_container .name {
+.container-teddy-name .name {
     display: inline-block;
     padding: 8px 12px;
     color: #151515;
@@ -91,42 +91,42 @@ h1 {
 }
 
 /* Page list */
-.list_container {
+.container-list {
     text-align: center;
 }
 
-.list_container .thumbnail .caption {
+.container-list .thumbnail .caption {
     padding: 4px 6px;
 }
 
-.list_container .add {
+.container-list .add {
     font-size: 1.8em;
 }
 
 /* Page edit */
-.edit_container .image {
+.container-edit .image {
     text-align: center;
 }
 
-.edit_container .btn-second {
+.container-edit .btn-second {
     margin-left: 15px;
 }
 
 /* Page show */
-.show_container {
+.container-show {
     text-align: center;
 }
 
-.show_container img {
+.container-show img {
     height: 100%;
     max-width: 100%;
     margin: 0 auto 15px;
 }
 
-.show_container table {
+.container-show table {
     margin-top: 10px;
 }
 
-.show_container table td {
+.container-show table td {
     word-break:break-all;
 }

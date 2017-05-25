@@ -1,9 +1,9 @@
 $(function () {
     var roulette = $('.roulette'),
         startButton = $('.btn.start'),
-        btnContainer = $('.btn_container'),
+        btnContainer = $('.container-buttons'),
         nameDiv = $('.name'),
-        infoContainer = $('.teddy_info_container');
+        infoContainer = $('.container-teddy-name');
 
     var option = {
         speed: 20,

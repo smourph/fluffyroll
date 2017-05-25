@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <div class="row main_container btn_container">
+    <div class="row container-main container-buttons">
         <div class="col-xs-12">
             {% if teddies is not empty and teddies|length > 0 %}
                 <button class="btn btn-lg btn-default start" role="button">FLUFFY ROLL</button>
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="row main_container roulette_container">
+    <div class="row container-main container-roulette">
         <div class="col-xs-12">
             <div class="roulette">
                 {% for teddy in teddies %}
@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <div class="row teddy_info_container">
+    <div class="row container-teddy-name">
         <div class="col-xs-8 col-xs-offset-2">
             <div class="name"></div>
         </div>

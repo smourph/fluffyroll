@@ -12,6 +12,13 @@
                     <td>{{ teddy.id }}</td>
                 </tr>
                 <tr>
+                    <th>Image</th>
+                    <td>
+                        <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"
+                             class="img-rounded"/>
+                    </td>
+                </tr>
+                <tr>
                     <th>Filename</th>
                     <td>{{ teddy.image }}</td>
                 </tr>
@@ -21,9 +28,6 @@
                 </tr>
                 </tbody>
             </table>
-
-            <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_roll') }}"
-                 class="img-rounded"/>
         </div>
     </div>
 {% endblock %}

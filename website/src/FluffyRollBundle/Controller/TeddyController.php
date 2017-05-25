@@ -142,7 +142,7 @@ class TeddyController extends Controller
 
             $fileUploader->removeFile($previousFilename);
 
-            return $this->redirectToRoute('_edit', ['id' => $teddy->getId()]);
+            return $this->redirectToRoute('_show', ['id' => $teddy->getId()]);
         }
 
         return $this->render(
@@ -178,7 +178,7 @@ class TeddyController extends Controller
             $fileUploader->removeFile($previousFilename);
         }
 
-        return $this->redirectToRoute('_index');
+        return $this->redirectToRoute('_list');
     }
 
     /**

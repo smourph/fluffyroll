@@ -16,7 +16,9 @@
 
             <div class="form-group text-center">
                 <input type="submit" class="btn btn-lg btn-default" value="Edit"/>
-                <button id="delete-form-submit" form="delete-form" class="btn btn-lg btn-danger btn-second">Delete</button>
+                <button id="delete-form-submit" form="delete-form"
+                        onclick="return confirm('Are you sure?');"
+                        class="btn btn-lg btn-danger btn-second">Delete</button>
             </div>
             {{ form_end(edit_form) }}
 

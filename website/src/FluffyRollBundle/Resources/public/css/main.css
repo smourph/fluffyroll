@@ -93,3 +93,16 @@ body, .container-fluid {
 .list_container .thumbnail .caption {
     padding: 4px 6px;
 }
+
+/* Page edit */
+.edit_container .image {
+    text-align: center;
+}
+
+.edit_container .image img {
+    border-radius: 6px;
+}
+
+.edit_container .btn-second {
+    margin-left: 15px;
+}

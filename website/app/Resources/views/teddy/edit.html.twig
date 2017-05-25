@@ -1,21 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <h1>Teddies edit</h1>
+    <h1>Edit {{ teddy.name }}</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+    <div class="row edit_container">
+        <div class="col-xs-12">
+            {{ form_start(edit_form) }}
+            <div class="form-group">
+                {{ form_row(edit_form.name) }}
+            </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            <div class="form-group">
+                {{ form_row(edit_form.image) }}
+            </div>
+
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-lg btn-default" value="Edit"/>
+                <button id="delete-form-submit" form="delete-form" class="btn btn-lg btn-danger btn-second">Delete</button>
+            </div>
+            {{ form_end(edit_form) }}
+
+            <div class="image">
+                <img src="{{ asset('upload/images/'~teddy.image|e) | imagine_filter('teddy_thumb') }}"/>
+            </div>
+        </div>
+
+        {{ form(delete_form, {'attr': {'id': 'delete-form'}}) }}
+    </div>
 {% endblock %}

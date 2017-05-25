@@ -2,6 +2,10 @@ body, .container-fluid {
     height: 100%;
 }
 
+h1 {
+    text-align: center;
+}
+
 /* Navbar fixes */
 .navbar-nav {
     margin: 5px 0;
@@ -105,4 +109,19 @@ body, .container-fluid {
 
 .edit_container .btn-second {
     margin-left: 15px;
+}
+
+/* Page show */
+.show_container img {
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto 15px;
+}
+
+.show_container table {
+    margin-top: 10px;
+}
+
+.show_container table td {
+    word-break:break-all;
 }

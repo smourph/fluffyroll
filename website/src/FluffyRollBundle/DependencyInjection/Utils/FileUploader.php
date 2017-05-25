@@ -2,6 +2,7 @@
 
 namespace FluffyRollBundle\DependencyInjection\Utils;
 
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
@@ -43,5 +44,14 @@ class FileUploader
     public function removeFile(string $fileName)
     {
         unlink($this->_targetDir.$fileName);
+    }
+
+    /**
+     * @param string $fileName
+     * @return File
+     */
+    public function getFile(string $fileName)
+    {
+        return new File($this->_targetDir.$fileName);
     }
 }

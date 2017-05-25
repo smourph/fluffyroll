@@ -2,8 +2,6 @@
 
 namespace FluffyRollBundle\Repository;
 
-use FluffyRollBundle\Entity\Teddy;
-
 /**
  * TeddyRepository
  *

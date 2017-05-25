@@ -18,4 +18,4 @@ parameters:
     # A secret key that's used to generate certain security-related tokens
     secret: 2e94e136d7e807f8c1a1c1c5b2ef9f3ab584d76d
 
-    image_directory: upload/images/
+    image_directory: upload/images

@@ -44,7 +44,7 @@ class FileUploader
      */
     public function removeFile(string $fileName)
     {
-        unlink($this->_targetDir.$fileName);
+        unlink($this->_targetDir.'/'.$fileName);
     }
 
     /**
@@ -53,7 +53,7 @@ class FileUploader
      */
     public function getFile(string $fileName)
     {
-        return new File($this->_targetDir.$fileName);
+        return new File($this->_targetDir.'/'.$fileName);
     }
 
     /**
@@ -62,7 +62,8 @@ class FileUploader
      * @param bool $fullReplace
      * @return string
      */
-    private function sanitize($string, $lowercase = true, $fullReplace = false) {
+    private function sanitize($string, $lowercase = true, $fullReplace = false)
+    {
         $strip = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "=", "+", "[", "{", "]",
             "}", "\\", "|", ";", ":", "\"", "'", "", "&#8216;", "&#8217;", "&#8220;", "&#8221;", "&#8211;", "&#8212;",
             "â€”", "â€“", ",", "<", ".", ">", "/", "?"];

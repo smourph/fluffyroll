@@ -16,6 +16,8 @@ class TeddyType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $fileRequired = isset($options['fileRequired']) ? $options['fileRequired'] : true;
+
         $builder
             ->add(
                 'name',
@@ -30,6 +32,7 @@ class TeddyType extends AbstractType
                 'imageFile',
                 FileType::class,
                 [
+                    'required' => $fileRequired,
                     'attr' => [
                         'accept' => 'image/*',
                         'capture' => 'camera',
@@ -47,6 +50,7 @@ class TeddyType extends AbstractType
         $resolver->setDefaults(
             [
                 'data_class' => Teddy::class,
+                'fileRequired' => true
             ]
         );
     }

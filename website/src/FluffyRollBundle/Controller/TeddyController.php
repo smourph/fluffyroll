@@ -114,7 +114,7 @@ class TeddyController extends Controller
     public function editAction(Request $request, Teddy $teddy)
     {
         $deleteForm = $this->createDeleteForm($teddy);
-        $editForm = $this->createForm(TeddyType::class, $teddy);
+        $editForm = $this->createForm(TeddyType::class, $teddy, ['fileRequired' => false]);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

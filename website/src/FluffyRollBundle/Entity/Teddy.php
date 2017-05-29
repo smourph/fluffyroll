@@ -39,7 +39,6 @@ class Teddy
      *
      * @Vich\UploadableField(mapping="teddy_image", fileNameProperty="image")
      *
-     * @Assert\NotBlank(message="Picture is missing!")
      * @Assert\Image()
      */
     private $imageFile;

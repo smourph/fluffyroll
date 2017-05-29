@@ -89,7 +89,7 @@ class TeddyController extends Controller
     /**
      * Finds and displays a teddy entity.
      *
-     * @Route("/{id}", name="_show")
+     * @Route("/{id}", name="_show", requirements={"id": "\d+"})
      * @Method("GET")
      */
     public function showAction(Teddy $teddy)
@@ -108,7 +108,7 @@ class TeddyController extends Controller
     /**
      * Displays a form to edit an existing teddy entity.
      *
-     * @Route("/{id}/edit", name="_edit")
+     * @Route("/{id}/edit", name="_edit", requirements={"id": "\d+"})
      * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Teddy $teddy)
@@ -136,7 +136,7 @@ class TeddyController extends Controller
     /**
      * Deletes a teddy entity.
      *
-     * @Route("/{id}", name="_delete")
+     * @Route("/{id}", name="_delete", requirements={"id": "\d+"})
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, Teddy $teddy)

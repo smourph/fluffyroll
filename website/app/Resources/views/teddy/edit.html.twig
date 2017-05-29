@@ -24,6 +24,7 @@
 
             <div class="image">
                 <img src="{{ vich_uploader_asset(teddy, 'imageFile') | imagine_filter('teddy_thumb') }}"
+                     alt="{{ teddy.name|e }}"
                      class="img-rounded"/>
             </div>
         </div>

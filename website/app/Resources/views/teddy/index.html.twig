@@ -20,6 +20,7 @@
             <div class="roulette">
                 {% for teddy in teddies %}
                     <img src="{{ vich_uploader_asset(teddy, 'imageFile') | imagine_filter('teddy_roll') }}"
+                         alt="{{ teddy.name|e }}"
                          data-name="{{ teddy.name|e }}"
                          class="img-rounded"/>
                 {% endfor %}

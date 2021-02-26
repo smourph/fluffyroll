@@ -1,0 +1,36 @@
+name: Start a new release
+
+on:
+  push:
+    branches:
+      - 'release/**'
+
+jobs:
+  start-new-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get version from branch or tag name
+        id: get_version
+        uses: battila7/get-version-action@v2
+
+      - name: Change version number in project
+        run: npm version ${{ steps.get_version.outputs.version-without-v }} --allow-same-version --no-git-tag-version
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: github-actions
+          author_email: github-actions@github.com
+          message: 'feat: start release ${{ steps.get_version.outputs.version }}'
+          add: '["package.json"]'
+
+      - name: Create Pull Request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: master
+          pr_title: "Release ${{ steps.get_version.outputs.version }}"
+          github_token: ${{ github.token }}

@@ -4,6 +4,14 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import config from './config';
+
+if (config.titlePrefix) {
+  document.title = `${config.titlePrefix} ${document.title}`;
+}
+
+console.log(config.githubDBFluffs);
+console.log(process.env);
 
 ReactDOM.render(
   <React.StrictMode>

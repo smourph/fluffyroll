@@ -1,3 +1,0 @@
-services:
-    fluffy_roll.namer.propertyanduniqid:
-        class: FluffyRollBundle\DependencyInjection\Namer\PropertyAndUniqIdNamer

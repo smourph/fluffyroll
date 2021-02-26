@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/fluffyroll/static/css/main.27bedbc7.chunk.css",
+    "main.js": "/fluffyroll/static/js/main.a9cf2bf5.chunk.js",
+    "main.js.map": "/fluffyroll/static/js/main.a9cf2bf5.chunk.js.map",
+    "runtime-main.js": "/fluffyroll/static/js/runtime-main.b3955e1d.js",
+    "runtime-main.js.map": "/fluffyroll/static/js/runtime-main.b3955e1d.js.map",
+    "static/js/2.4ec03ebf.chunk.js": "/fluffyroll/static/js/2.4ec03ebf.chunk.js",
+    "static/js/2.4ec03ebf.chunk.js.map": "/fluffyroll/static/js/2.4ec03ebf.chunk.js.map",
+    "static/js/3.9a4b1fdf.chunk.js": "/fluffyroll/static/js/3.9a4b1fdf.chunk.js",
+    "static/js/3.9a4b1fdf.chunk.js.map": "/fluffyroll/static/js/3.9a4b1fdf.chunk.js.map",
+    "index.html": "/fluffyroll/index.html",
+    "service-worker.js": "/fluffyroll/service-worker.js",
+    "service-worker.js.map": "/fluffyroll/service-worker.js.map",
+    "static/css/main.27bedbc7.chunk.css.map": "/fluffyroll/static/css/main.27bedbc7.chunk.css.map",
+    "static/js/2.4ec03ebf.chunk.js.LICENSE.txt": "/fluffyroll/static/js/2.4ec03ebf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b3955e1d.js",
+    "static/js/2.4ec03ebf.chunk.js",
+    "static/css/main.27bedbc7.chunk.css",
+    "static/js/main.a9cf2bf5.chunk.js"
+  ]
+}

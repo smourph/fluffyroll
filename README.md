@@ -1,5 +1,13 @@
 # Fluffy Roll
 
+Let's roll all your fluffs !
+
+[![Build Status](https://travis-ci.org/smourph/fluffyroll.svg?branch=master)](https://travis-ci.org/smourph/fluffyroll)
+[![Dependency Status](https://david-dm.org/smourph/fluffyroll.svg)](https://david-dm.org/smourph/fluffyroll)
+[![devDependency Status](https://david-dm.org/smourph/fluffyroll/dev-status.svg)](https://david-dm.org/smourph/fluffyroll#info=devDependencies)
+
+* [Run on github.io](https://smourph.github.io/fluffyroll/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

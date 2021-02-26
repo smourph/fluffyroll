@@ -1,6 +1,7 @@
 {
   "name": "fluffyroll",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Let's roll all your fluffs !",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
@@ -35,5 +36,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smourph/fluffyroll.git"
+  },
+  "author": "Julien De Conti <julien.de.conti@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/smourph/fluffyroll/issues"
+  },
+  "homepage": "http://smourph.github.io/fluffyroll"
 }

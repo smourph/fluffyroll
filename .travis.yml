@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - 14
+cache: npm
+script:
+  - yarn test
+  - yarn build
+branches:
+  except:
+    - gh-pages

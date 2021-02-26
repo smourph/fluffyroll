@@ -1,0 +1,26 @@
+// @see https://coolors.co/23456c-6096ba-cae3f7-dae3e7-adaead
+$indigoDye: #23456C;
+$ceruleanFrost: #6096BA;
+$beauBlue: #CAE3F7;
+$gainsboro: #DAE2E7;
+$silverChalice: #ADAEAD;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+
+  .app-header, .app-footer {
+    background-color: $indigoDye;
+    color: $gainsboro;
+    font-size: calc(10px + 2vmin);
+  }
+
+  .app-main {
+    flex: 1;
+    background-color: $gainsboro;
+    color: $indigoDye;
+    font-size: calc(10px + 2vmin);
+  }
+}

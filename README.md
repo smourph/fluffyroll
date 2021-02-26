@@ -2,7 +2,7 @@
 
 Let's roll all your fluffs !
 
-[![Build Status](https://travis-ci.org/smourph/fluffyroll.svg?branch=master)](https://travis-ci.org/smourph/fluffyroll)
+[![Build Status](https://travis-ci.org/smourph/fluffyroll.svg?branch=main)](https://travis-ci.org/smourph/fluffyroll)
 [![Dependency Status](https://david-dm.org/smourph/fluffyroll.svg)](https://david-dm.org/smourph/fluffyroll)
 [![devDependency Status](https://david-dm.org/smourph/fluffyroll/dev-status.svg)](https://david-dm.org/smourph/fluffyroll#info=devDependencies)
 
